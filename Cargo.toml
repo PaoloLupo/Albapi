@@ -1,0 +1,13 @@
+[package]
+name = "etabs_api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+eframe = "0.19.0"
+winapi =  {version = "0.3.9", features = ["objbase", "winerror", "minwindef", "wtypes", "oaidl", "unknwnbase", "combaseapi", "oleauto"]}
+
+[build-dependencies]
+winapi-tlb-bindgen ={ git = "https://github.com/Arnavion/winapi-tlb-bindgen"}
