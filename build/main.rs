@@ -1,3 +1,4 @@
+mod find_etabs;
 
 fn main () {
 
@@ -9,8 +10,11 @@ fn main () {
         std::io::BufWriter::new(etabs_api)
     };
 
+    let etabs_dir = find_etabs::find_etabs_dir().unwrap();
+
+    // TODO: Make path to etabs_api.idl configurable via input from user
     let _ = winapi_tlb_bindgen::build(
-        std::path::Path::new(r"C:\Program Files\Computers and Structures\ETABS 20\ETABSv1.tlb"),
+        &etabs_dir,
         false,
         etabs_api,
     ).unwrap();
