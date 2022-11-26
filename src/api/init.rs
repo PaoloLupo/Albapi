@@ -3,8 +3,7 @@ use crate::etabs_api;
 macro_rules! assert_hr {
     ($e:expr) => {
         let hr = $e;
-        if !winapi::shared::winerror::SUCCEEDED(hr) {
-        }
+        if !winapi::shared::winerror::SUCCEEDED(hr) {}
     };
 }
 

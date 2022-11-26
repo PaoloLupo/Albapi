@@ -1,9 +1,10 @@
-use eframe::{egui, App, Frame};
 use eframe::egui::Context;
+use eframe::{egui, App, Frame};
 
 pub struct Alba {
     boolean: bool,
 }
+
 
 impl Default for Alba {
     fn default() -> Self {

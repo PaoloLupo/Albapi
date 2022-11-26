@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-pub fn find_etabs_dir () -> Option<PathBuf> {
+pub fn find_etabs_dir() -> Option<PathBuf> {
     // compatible versions of ETABS with the current version of the API
     let versions = ["18", "19", "20"];
 
@@ -15,9 +15,12 @@ pub fn find_etabs_dir () -> Option<PathBuf> {
         etabs_dir.push(format!("ETABS {}", version));
         etabs_dir.push("ETABSv1.tlb");
 
-       if etabs_dir.exists() {
-           println!("cargo:warning= Found ETABS installation directory: {:?}", etabs_dir);
-           return Some(etabs_dir);
+        if etabs_dir.exists() {
+            println!(
+                "cargo:warning= Found ETABS installation directory: {:?}",
+                etabs_dir
+            );
+            return Some(etabs_dir);
         }
     }
 

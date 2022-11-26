@@ -1,10 +1,10 @@
-mod gui;
 mod api;
+mod gui;
+mod design;
 
-use winapi::um::oaidl::SAFEARRAY;
 use crate::api::etabs_api;
 use crate::gui::init::alba_gui_init;
-
+use winapi::um::oaidl::SAFEARRAY;
 
 macro_rules! assert_hr {
     ($e:expr) => {
@@ -25,10 +25,8 @@ macro_rules! assert_hr {
 
 /// Funcion responsable de la comunicación con ETABS y el software
 
-
 fn main() {
     alba_gui_init();
-
 }
 
 unsafe fn bstr(s: &str) -> winapi::shared::wtypes::BSTR {

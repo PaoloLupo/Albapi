@@ -4,7 +4,7 @@ use std::path::PathBuf;
 // compatible versions of ETABS with the current version of the API
 const COMPATIBLE_ETABS_VERSIONS: [&str; 3] = ["18", "19", "20"];
 
-pub fn find_etabs_dir () -> Option<Vec<PathBuf>> {
+pub fn find_etabs_dir() -> Option<Vec<PathBuf>> {
     let program_files = std::env::var_os("ProgramFiles").unwrap();
 
     let mut etabs_dirs = Vec::new();
@@ -21,16 +21,8 @@ pub fn find_etabs_dir () -> Option<Vec<PathBuf>> {
     }
 
     if etabs_dirs.is_empty() {
-        return None
+        return None;
     }
 
     Some(etabs_dirs)
-}
-
-pub fn print_etabs_dirs () {
-    ;
-
-    for etabs_dir in etabs_dirs {
-        println!("cargo:warning= Found ETABS installation directory: {:?}", etabs_dir);
-    }
 }
